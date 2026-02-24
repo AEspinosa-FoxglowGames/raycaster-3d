@@ -1,41 +1,72 @@
-# Prerequisites
-*.d
+# ── Visual Studio ────────────────────────────────────────────────
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vcxproj.filters
+*.aps
 
-# Compiled Object files
+# ── Build output ─────────────────────────────────────────────────
+out/
+x64/
+x86/
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+ipch/
+*.exe
+*.dll
+*.lib
+*.exp
+*.ilk
+*.pdb
+*.idb
+*.pch
+*.obj
+*.o
+
+# ── CMake ────────────────────────────────────────────────────────
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+CMakeUserPresets.json
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+Makefile
+_deps/
+
+# ── Compiled / intermediate ───────────────────────────────────────
 *.slo
 *.lo
-*.o
-*.obj
-
-# Precompiled Headers
 *.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
 *.lai
 *.la
 *.a
-*.lib
-
-# Executables
-*.exe
-*.out
+*.mod
+*.smod
+*.dwo
+*.d
 *.app
 
-# debug information files
-*.dwo
+# ── Archives / zips ───────────────────────────────────────────────
+*.zip
+*.rar
+*.7z
+
+# ── OpenGL / graphics dependencies ───────────────────────────────
+# (keep your actual source deps but ignore any prebuilt binaries
+#  you don't want public — comment out if you WANT deps uploaded)
+# lib/
+# bin/
+
+# ── OS junk ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
