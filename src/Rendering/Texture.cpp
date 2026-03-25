@@ -1,4 +1,3 @@
-
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 #include "Texture.h"
@@ -10,7 +9,28 @@ glm::vec3 CPUTexture::sample(float u, float v) const
 	if (x < 0) x += width;
 	if (y < 0) y += height;
 	int idx = (y * width + x) * channels;
-	return { pixels[idx] / 255.0f, pixels[idx + 1] / 255.0f, pixels[idx + 2] / 255.0f };
+	return {
+		pixels[idx] / 255.0f,
+		pixels[idx + 1] / 255.0f,
+		pixels[idx + 2] / 255.0f
+	};
+}
+
+float CPUTexture::sampleAlpha(float u, float v) const
+{
+	if (channels < 4) return 1.0f; // no alpha channel -- fully opaque
+	int x = (int)(u * width) % width;
+	int y = (int)(v * height) % height;
+	if (x < 0) x += width;
+	if (y < 0) y += height;
+	int idx = (y * width + x) * channels;
+	return pixels[idx + 3] / 255.0f;
+}
+
+float CPUTexture::luminanceAlpha(float u, float v, float threshold) const
+{
+	glm::vec3 c = sample(u, v);
+	return (c.r + c.g + c.b > threshold) ? 1.0f : 0.0f;
 }
 
 CPUTexture loadCPUTexture(const char* path)

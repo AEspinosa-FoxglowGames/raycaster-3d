@@ -1,5 +1,5 @@
 ﻿cmake_minimum_required(VERSION 3.21)
-project(2.5D-Horror LANGUAGES CXX)
+project(Raycaster-3D LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -9,7 +9,7 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES} "src/Core/main.cpp" "src/World/Map.h" "src/Entities/Player.h" "src/Rendering/Shader.h" "src/World/Raycaster.h" "src/Rendering/Texture.h" "src/Rendering/HUD.h" "src/Rendering/Renderer.h" "src/Rendering/Renderer.cpp" "src/Rendering/Texture.cpp" "src/Rendering/HUD.cpp" "src/Entities/Entity.h" "src/World/World.h" "src/World/World.cpp")
+add_executable(${PROJECT_NAME} ${SOURCES}  "src/World/Map.h" "src/Entities/Player.h" "src/Rendering/Shader.h" "src/World/Raycaster.h" "src/Rendering/Texture.h" "src/Rendering/HUD.h" "src/Rendering/Renderer.h" "src/Rendering/Renderer.cpp" "src/Rendering/Texture.cpp" "src/Rendering/HUD.cpp" "src/Entities/Entity.h"  )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/src"
